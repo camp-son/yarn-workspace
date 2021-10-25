@@ -73,3 +73,45 @@ yarn init
 
     yarn dev
     ```
+
+## Same library, Different version
+
+포함된 패키지들 중 같은 라이브러리를 사용하지만, 버전이 다른 경우 `node_modules` 는 어떻게 되는지 살펴봅시다.
+
+1. `package-a` 패키지에는 `lodash@3.10.1`, `package-b` 패키지에는 `lodash@4.0.0`을 의존성을 추가해줍니다.
+    ```json
+    // package-a package.json
+    {
+        "dependencies": {
+            "lodash": "3.10.1"
+        }
+    }
+    ```
+    ```json
+    // package-b package.json
+    "dependencies": {
+        "lodash": "4.0.0"
+    }
+    ```
+1. 패키지를 설치합니다.
+    ```
+    yarn
+    ```
+
+### Result
+
+```
+(root)
+├ node_modules
+    ⌊ package-a
+    ⌊ package-b
+    ⌊ lodash
+├ packages
+    ⌊ package-a
+    ⌊ package-b
+        ⌊ node_modules/lodash
+⌊ package.json
+```
+
+위 폴더 구조처럼 하나의 버전은 루트의 `node_modules` 폴더에 설치가 되고 나머지 버전에 대해선 각 패키지의 `node_modules` 폴더에 설치되게 됩니다. 이로써 패키지의 버전별 사용이 가능하게 되었습니다. 
+
