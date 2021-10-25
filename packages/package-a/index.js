@@ -1,4 +1,4 @@
-const foo = require('package-b');
+const foo = require('@camp-son/package-b');
 console.log('Hello package-a');
 
 foo();

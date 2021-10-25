@@ -1,5 +1,5 @@
 {
-  "name": "package-a",
+  "name": "@camp-son/package-a",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -7,7 +7,7 @@
     "dev": "node index.js"
   },
   "dependencies": {
-    "package-b": "1.0.0",
+    "@camp-son/package-b": "1.0.0",
     "lodash": "3.10.1"
   }
 }
