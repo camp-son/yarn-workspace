@@ -1,0 +1,13 @@
+{
+  "name": "yarn-workspace",
+  "version": "1.0.0",
+  "main": "index.js",
+  "private": true,
+  "workspaces": ["packages/*", "examples/*"],
+  "repository": "https://github.com/camp-son/yarn-workspace.git",
+  "author": "camp-son <sjy2814@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "yarn workspace package-a dev"
+  }
+}
